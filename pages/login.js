@@ -16,6 +16,10 @@ function Login() {
                 const response = await api.get(`loginCnv/${email}/${password}`);
                 let cnvId = response.data.cnvId;
                 let cnvNomFantasia = response.data.cnvNomFantasia;
+
+                console.log(cnvId)
+                console.log(cnvNomFantasia)
+
                 Router.push({
                     pathname: '/sobre',
                     query: { id: `${cnvId}`, name: `${cnvNomFantasia}`}
