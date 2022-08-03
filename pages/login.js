@@ -10,6 +10,7 @@ function Login() {
     
     async function sendLogin(e){
         e.preventDefault();
+
         if (email.length > 6 ) {
             try {
                 const response = await api.get(`loginCnv/${email}/${password}`);
@@ -20,7 +21,7 @@ function Login() {
                     query: { id: `${cnvId}`, name: `${cnvNomFantasia}`}
                 })
             } catch (err) {
-                alert('Falha no login convênio! Tente novamente.', email);
+                alert(`Falha no login convênio! Tente novamente. ${email}`);
             } 
         }else {
             try {
@@ -32,7 +33,7 @@ function Login() {
                     query: { id: `${cnvId}`, name: `${cnvNomFantasia}`}
                 })
             } catch (err) {
-                alert('Falha no login alt. convênio! Tente novamente.', email);
+                alert(`Falha no login alt. convênio! Tente novamente. ${email}`);
             } 
         }
          
