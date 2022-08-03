@@ -20,7 +20,7 @@ function Login() {
                     query: { id: `${cnvId}`, name: `${cnvNomFantasia}`}
                 })
             } catch (err) {
-                alert('Falha no login convênio! Tente novamente.');
+                alert('Falha no login convênio! Tente novamente.', email);
             } 
         }else {
             try {
@@ -32,7 +32,7 @@ function Login() {
                     query: { id: `${cnvId}`, name: `${cnvNomFantasia}`}
                 })
             } catch (err) {
-                alert('Falha no login Alt. convênio! Tente novamente.');
+                alert('Falha no login alt. convênio! Tente novamente.', email);
             } 
         }
          
