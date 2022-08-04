@@ -2,21 +2,12 @@ module.exports = {
     async headers() {
       return [
         {
-          source: '/about',
+          source: '/:path',
           headers: [
-            {
-              key: 'X-About-Custom-Header',
-              value: 'about_header_value',
-            },
-          ],
-        },
-        {
-          source: '/news/:id',
-          headers: [
-            {
-              key: 'X-News-Custom-Header',
-              value: 'news_header_value',
-            },
+            {key: 'Access-Control-Allow-Credentials', value: true},
+            {key: 'Access-Control-Allow-Origin', value: '*'},
+            {key: 'Access-Control-Allow-Methods', value: 'GET, PUT, POST, DELETE'},
+            {key: 'Access-Control-Allow-Headers', value: 'X-PINGOTHER, Content-Type, Authorization'},
           ],
         },
       ]
