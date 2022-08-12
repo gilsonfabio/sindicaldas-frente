@@ -63,7 +63,7 @@ function Contato() {
                     <h2 className="title">Contato</h2>
                     <div className="contact-content">
                         <div className="contact-column contact-left">
-                            <p>Proin finibus dapibus lorem, eget viverra nunc auctor vitae. Pellentesque condimentum diam sed convallis posuere.</p>
+                            <p></p>
                             <div className="contact-icons">
                                 <div className="contact-row">
                                     <i className="fas fa-user"></i>
@@ -72,7 +72,7 @@ function Contato() {
                                             Empresa
                                         </div>
                                         <div className="contact-subtitle">
-                                            Celke
+                                            Associação Cultural, Esportiva e Social dos Servidores Públicos Municipais de Caldas Novas 
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@ function Contato() {
                                             Endereço
                                         </div>
                                         <div className="contact-subtitle">
-                                            Avenida Winston Churchill
+                                            Avenida E, Quadra AI 04, Lote 01, Estância Itanhangá I,
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@ function Contato() {
                                             E-mail
                                         </div>
                                         <div className="contact-subtitle">
-                                            cesar@celke.com.br
+                                            
                                         </div>
                                     </div>
                                 </div>

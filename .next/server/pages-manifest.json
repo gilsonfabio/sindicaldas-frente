@@ -4,6 +4,6 @@
   "/_document": "pages/_document.js",
   "/sobre": "pages/sobre.js",
   "/login": "pages/login.js",
-  "/VdaVencimento": "pages/VdaVencimento.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/lancamento": "pages/lancamento.js"
 }
