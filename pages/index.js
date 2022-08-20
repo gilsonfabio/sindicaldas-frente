@@ -28,7 +28,7 @@ function Home() {
                             acreditamos no poder da união.
                         </div>
                         <div className="text-3" data-aos="fade-up-right">
-                            Só assim superamos as dificuldades!
+                            Só assim superamos as dificuldades! 
                         </div>
                         <a href="/login">Novo Lançamento</a>
                     </div>

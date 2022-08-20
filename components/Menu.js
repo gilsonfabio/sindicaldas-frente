@@ -9,7 +9,7 @@ const Menu = () => (
         <nav className="navbar">
             <div className="max-width">
                 <div className="logo">
-                    <a href="/">CaldasCard</a>
+                    <a href="/">CaldasCard .</a>
                 </div>
                 <ul className="menu">
                     <li><a href="/" className="menu-btn">Home</a></li>
