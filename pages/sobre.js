@@ -207,7 +207,6 @@ export default function Sobre() {
     } catch (err) {
         alert('Falha na busca de informações! Tente novamente.');
     }
-    
     //Router.push({
     //  pathname: '/lancamento',
     //  query: { convenio: `${codConvenio}`, nomFantasia: `${nomConvenio}`, nroCartao: `${cartao}`}

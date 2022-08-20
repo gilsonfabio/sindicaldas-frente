@@ -43,12 +43,13 @@ function Lancamento() {
 
     async function cnfLancamento(e){
         e.preventDefault();
+        if (cnvId != 4 ){
         try {
             let cartao = idCrt;
             const response = await api.get(`loginUsr/${cartao}/${password}`);
-            console.log(parseFloat(saldo));
-            console.log(parseFloat(vlrCompra));
-            console.log(statusUsr);
+            //console.log(parseFloat(saldo));
+            //console.log(parseFloat(vlrCompra));
+            //console.log(statusUsr);
 
             if (parseFloat(saldo) < parseFloat(vlrCompra) ) {
                 alert('Falha na confirmação da compra! Codigo 55');
@@ -101,7 +102,54 @@ function Lancamento() {
             }
         } catch (err) {
             alert('Falha na confirmação da compra!');
-        }    
+        }  
+        }else {
+            try {
+                let cartao = idCrt;
+                const response = await api.get(`loginUsr/${cartao}/${password}`);
+                let data = new Date();
+                        var dia = data.getDate();
+                        var mes = data.getMonth() + 1;
+                        var ano = data.getFullYear();
+                        var dataString = ano + '-' + mes + '-' + dia;
+                        var dataAtual = dataString;
+            
+                        var hor = data.getHours();
+                        var min = data.getMinutes();
+                        var seg = data.getSeconds();
+                        var horaString = hor + ':' + min + ':' + seg;
+                        var horaAtual = horaString;
+            
+                        var priLetra = arr_alfa[dia];
+                        var segLetra = arr_alfa[hor];
+                        var codSeguranca = priLetra + segLetra + ano + cnvId + min + seg;
+                        
+                        var taxAdmin = 3;
+                        var statusCmp = 'A';
+            
+                        api.post('newcompra', {
+                            cmpEmissao: dataAtual, 
+                            cmpHorEmissao: horaAtual, 
+                            cmpConvenio: cnvId, 
+                            cmpQtdParcela: parseInt(qtdParcelas), 
+                            cmpVlrCompra: parseFloat(vlrCompra), 
+                            cmpServidor: servidor, 
+                            cmpCodSeguranca: codSeguranca, 
+                            cmpStatus: statusCmp,
+                            cmpCartao: cartao      
+                        }).then(() => {
+                            alert('Compra cadastrada com sucesso!')
+                        }).catch(() => {
+                            alert('Erro no cadastro!');
+                        })  
+                        Router.push({
+                            pathname: '/sobre',
+                            query: { id: `${cnvId}`, name: `${nomConvenio}`}
+                        });
+            } catch (err) {
+                alert('Falha na confirmação da compra!');
+            }  
+        }  
     }
 
     useEffect(() => {
