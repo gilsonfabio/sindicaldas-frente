@@ -106,7 +106,7 @@ function Lancamento() {
         }else {
             try {
                 let cartao = idCrt;
-                const response = await api.get(`loginUsr/${cartao}/${password}`);
+                const response = await api.get(`liberaUsr/${cartao}`);
                 let data = new Date();
                         var dia = data.getDate();
                         var mes = data.getMonth() + 1;
