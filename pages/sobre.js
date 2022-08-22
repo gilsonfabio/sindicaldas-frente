@@ -195,22 +195,34 @@ export default function Sobre() {
 
   async function newLancamento(e){
     e.preventDefault();
-    try {
+    let idCnv = codConvenio;
+    if (idCnv === 4) {
+      try {
+          const response = await api.get(`verifUser/${cartao}`);
+          if(response.data.length === 0) {
+            const resp = await api.get(`gerSaldo/${cartao}`);
+          }
+          Router.push({
+            pathname: '/lancamento',
+            query: { convenio: `${codConvenio}`, nomFantasia: `${nomConvenio}`, nroCartao: `${cartao}`}
+          })
+      } catch (err) {
+          alert('Falha na busca de informações! Tente novamente.');
+      }
+    }else {
+      try {
         const response = await api.get(`verifUser/${cartao}`);
         if(response.data.length === 0) {
           const resp = await api.get(`gerSaldo/${cartao}`);
         }
         Router.push({
-          pathname: '/lancamento',
+          pathname: '/lancompras',
           query: { convenio: `${codConvenio}`, nomFantasia: `${nomConvenio}`, nroCartao: `${cartao}`}
         })
-    } catch (err) {
+      } catch (err) {
         alert('Falha na busca de informações! Tente novamente.');
-    }
-    //Router.push({
-    //  pathname: '/lancamento',
-    //  query: { convenio: `${codConvenio}`, nomFantasia: `${nomConvenio}`, nroCartao: `${cartao}`}
-  //})
+      }
+    }  
 }   
 
   useEffect(() => {
