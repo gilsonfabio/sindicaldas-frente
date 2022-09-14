@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Beneficios from '../components/beneficios';
 import Contato from '../components/contato';
+import Convenios from '../components/convenios';
 import Footer from '../components/footer';
 import Menu from '../components/Menu';
 
@@ -17,7 +18,6 @@ function Home() {
                 <title>CaldasCard</title>
             </Head>
             <Menu />
-
             <section className="top" data-aos="fade-up">
                 <div className="max-width">
                     <div className="top-content">
@@ -34,6 +34,7 @@ function Home() {
                     </div>
                 </div>
             </section>
+            <Convenios />
             <Beneficios />
             <Contato />
             <Footer />
