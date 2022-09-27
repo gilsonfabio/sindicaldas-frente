@@ -97,6 +97,52 @@ body{
     background: none;
 }
 
+.btn{
+    color: #141b29;
+    display: flex;
+    height: 700px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.btn .max-width{
+    width: 100%;
+    display: flex;
+}
+.btn .top-content .text-1{
+    color: rgb(75, 192, 60);
+    font-size: 25px;
+}
+.btn .top-content .text-2{
+    color: rgb(75, 192, 60);
+    font-size: 55px;
+    font-weight: 400;
+    margin-left: -3px;
+}
+.btn .top-content .text-3{
+    color: rgb(75, 192, 60);
+    font-size: 32px;
+    margin: 5px 0;
+}
+.btn .top-content a{
+    display: inline-block;
+    background-color: #1f80e0;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 300;
+    border-radius: 6px;
+    border: 2px solid #1f80e0;
+    transition: all 0.3s ease;
+}
+.btn .top-content a:hover{
+    color: #1f80e0;
+    background: none;
+}
+
+
+
 .info{
     display: flex;
     flex-direction: column;
@@ -163,6 +209,125 @@ body{
       display: flex;
       flex-direction: column;
       background: #141b29;
+      color: #fff;
+      font-size: 20px;
+      width: 100%;
+      font-family: 'Ubuntu', sans-serif;
+      padding: 10px;
+  }
+
+  .info .title-convenios {
+    color: #fff;
+    font-size: 40px;
+    background: #141b29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .info .convenios {
+    display: flex;
+    flex-direction: row;
+    background: #141b29;
+    width: 100%;
+    height: 90%;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .info .convenios .left {
+      display: flex;
+      justify-content: center;
+      background: #141b29;
+      width: 50%;
+      height: 90%;
+      font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .info .convenios .left .image {
+      background: url("../public/banner_convenios.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      width: 400px;
+      height: 400px;
+  }
+  
+  .info .convenios .right {
+      display: flex;
+      flex-direction: column;
+      background: #141b29;
+      width: 50%;
+      height: 90%;
+      font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .info .convenios .right .text{
+      display: flex;
+      flex-direction: column;
+      background: #141b29;
+      color: #fff;
+      font-size: 20px;
+      width: 100%;
+      font-family: 'Ubuntu', sans-serif;
+      padding: 10px;
+  }
+
+  .info .title-servidor {
+    color: #fff;
+    font-size: 40px;
+    background: #0c0f16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .info .servidor {
+    display: flex;
+    flex-direction: row;
+    background: #0c0f16;
+    width: 100%;
+    height: 90%;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .info .servidor .left {
+      display: flex;
+      justify-content: center;
+      background: #0c0f16;
+      width: 50%;
+      height: 90%;
+      font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .info .servidor .left .image {
+      background: url("../public/banner_servidor.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      width: 400px;
+      height: 400px;
+  }
+  
+  .info .servidor .right {        
+      display: flex;
+      flex-direction: column;
+      background: #0c0f16;
+      width: 50%;
+      height: 90%;
+      font-family: 'Ubuntu', sans-serif;
+      margin-left: 25px;
+  }
+  
+  .info .servidor .right .text{
+      display: flex;
+      flex-direction: column;
+      background: #0c0f16;
       color: #fff;
       font-size: 20px;
       width: 100%;
@@ -605,6 +770,24 @@ body{
         height: 90%;
         font-family: 'Ubuntu', sans-serif;
       }
+
+      .info .convenios {
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        width: 100%;
+        height: 90%;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .info .servidor {
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        width: 100%;
+        height: 90%;
+        font-family: 'Ubuntu', sans-serif;
+      }
       
       .info .content .left {
           display: flex;
@@ -614,6 +797,42 @@ body{
           height: 90%;
           font-family: 'Ubuntu', sans-serif;
       }
+
+      .info .convenios .left {
+        display: flex;
+        justify-content: center;
+        background: #141b29;
+        width: 100%;
+        height: 90%;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .info .servidor .left {
+        display: flex;
+        justify-content: center;
+        background: #141b29;
+        width: 100%;
+        height: 90%;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .info .convenios {
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        width: 100%;
+        height: 90%;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .info .servidor {
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        width: 100%;
+        height: 90%;
+        font-family: 'Ubuntu', sans-serif;
+      }
       
       .info .content .left .image {
           background: url("../public/banner_beneficios.jpg");
@@ -622,6 +841,22 @@ body{
           border-radius: 10px;
           width: 90%;
       }
+
+      .info .convenios .left .image {
+        background: url("../public/banner_convenios.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        width: 90%;
+      }
+
+      .info .servidor .left .image {
+        background: url("../public/banner_servidor.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        width: 90%;
+      }
       
       .info .content .right {
           display: flex;
@@ -629,6 +864,22 @@ body{
           background: #141b29;
           width: 100%;
           font-family: 'Ubuntu', sans-serif;
+      }
+
+      .info .convenios .right {
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        width: 100%;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .info .servidor .right {
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        width: 100%;
+        font-family: 'Ubuntu', sans-serif;
       }
       
       .info .content .right .text{
@@ -640,6 +891,28 @@ body{
           width: 100%;
           font-family: 'Ubuntu', sans-serif;
           padding: 10px;
+      }
+
+      .info .convenios .right .text{
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        color: #fff;
+        font-size: 15px;
+        width: 100%;
+        font-family: 'Ubuntu', sans-serif;
+        padding: 10px;
+      }
+
+      .info .servidor .right .text{
+        display: flex;
+        flex-direction: column;
+        background: #141b29;
+        color: #fff;
+        font-size: 15px;
+        width: 100%;
+        font-family: 'Ubuntu', sans-serif;
+        padding: 10px;
       }
        
       .contact{

@@ -4,6 +4,7 @@ import Contato from '../components/contato';
 import Convenios from '../components/convenios';
 import Footer from '../components/footer';
 import Menu from '../components/Menu';
+import Servidores from '../components/servidores';
 
 function Home() {
     return (
@@ -35,6 +36,7 @@ function Home() {
                 </div>
             </section>
             <Convenios />
+            <Servidores />
             <Beneficios />
             <Contato />
             <Footer />
