@@ -650,6 +650,20 @@ body{
     color: #1f80e0;
     background: none;
 }
+
+.right form .button-forget button{
+    background: none;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.right form .button-forget button:hover{
+    color: #1f80e0;
+    background: none;
+}
    
 .report{
     color: #fff;
@@ -657,6 +671,8 @@ body{
     font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
 }
+
+
 
 /*..........................................................................*/
 

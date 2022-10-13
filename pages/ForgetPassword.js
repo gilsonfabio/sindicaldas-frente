@@ -11,7 +11,7 @@ function LoginServ() {
     async function handleEmail(e){
         e.preventDefault();
         try {
-          await api.get(`envEmail/${email}`)
+          await api.get(`recPassword/${email}`)
           Router.push({pathname: '/loginserv'});
         } catch (err) {
           alert('Falha no login! Tente novamente.', email);

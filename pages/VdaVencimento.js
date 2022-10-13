@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import Router, { useRouter } from 'next/router';
 import moment from 'moment';
 
 import api from '../pages/api/api';
@@ -74,6 +75,10 @@ function VdaVencimento() {
     const [datFinal, setDatFinal] = useState();
 
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
+    
+    const router = useRouter();
+    const codServidor = router.query.id;
+
 
     //const datNow = moment().format('DD-MM-YYYY');
     //const horNow = moment().format('hh:mm:ss');  
@@ -91,7 +96,7 @@ function VdaVencimento() {
         return [
             {text: venda.cmpId, fontSize: 9, margin: [0, 2, 0, 2]},
             {text: moment(venda.cmpEmissao).format('DD-MM-YYYY'), fontSize: 9, margin: [0, 2, 0, 2]},
-            {text: venda.usrNome, fontSize: 9, margin: [0, 2, 0, 2]},
+            {text: venda.cnvNomFantasia, fontSize: 9, margin: [0, 2, 0, 2]},
             {text: venda.cmpQtdParcela, fontSize: 9, margin: [0, 2, 0, 2]},
             {text: Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(venda.cmpVlrCompra), fontSize: 9, alignment: 'right', margin: [0, 2, 0, 2]}
         ]              
@@ -108,7 +113,7 @@ function VdaVencimento() {
                     [
                         {text: 'ID', style: 'tableHeader', fontSize: 10},
                         {text: 'EMISSÃO', style: 'tableHeader', fontSize: 10},
-                        {text: 'NOME SERVIDOR(A)', style: 'tableHeader', fontSize: 10},                        
+                        {text: 'CONVÊNIO', style: 'tableHeader', fontSize: 10},                        
                         {text: 'PARCELAS', style: 'tableHeader', fontSize: 10},
                         {text: 'VLR. DA COMPRA', style: 'tableHeader', fontSize: 10},
                     ],
@@ -140,17 +145,66 @@ function VdaVencimento() {
     };
    
     useEffect(() => {
-        api.get(`pdfVdaEmissao`).then(resp => {
-            setVendas(resp.data);  
-        })
+        
     },[]);
 
     function emitePdf() {
+        let servidor = 1;
+        api.get(`pdfVctCmpSrv/${datInicial}/${datFinal}/${codServidor}`).then(resp => {
+            setVendas(resp.data);  
+        })
         pdfMake.createPdf(docDefinition).open();
         //pdfMake.createPdf(docDefinition).download();  
     };
 
     return (
+        <div>
+            <Menu />
+            <section className="login">
+                <div className="max-width">
+                    <h2 className="login-title">Compras Vencimento</h2>
+                    <div className="login-content">
+                        <div className="login-column login-left">
+                            <div className="login-image">
+
+                            </div>
+                        </div>
+
+                        <div className="login-column right">
+                            <div className="text">
+                                Informe o Periodo desejado
+                            </div>
+
+                            <form onSubmit={emitePdf}>
+                                <div className="fields">
+                                    <div className="field name">
+                                        <input type="text" name="datInicial" placeholder="Informe data inicial" value={datInicial} onChange={(e) => {setDatInicial(e.target.value)}} />
+                                    </div>
+                                </div>
+
+                                <div className="fields">
+                                    <div className="field name">
+                                    <input className='input' type="text" name="datFinal" placeholder="Informe data final" value={datFinal} onChange={(e) => {setDatFinal(e.target.value)}} />
+                                    </div>
+                                </div>
+
+                                <div className="button-area">
+                                    <button type="submit">Entrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+}
+
+export default VdaVencimento;
+
+
+
+/*
         <>
             <Menu />
             <div className={classes.buttonArea}>
@@ -179,7 +233,4 @@ function VdaVencimento() {
                 </div>
             </div>
         </>
-    );
-}
-
-export default VdaVencimento;
+*/

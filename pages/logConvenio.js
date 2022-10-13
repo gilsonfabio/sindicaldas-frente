@@ -43,6 +43,11 @@ function LogConvenio() {
          
     }  
 
+    function handlePassword() {
+        Router.push({
+            pathname: '/ForgetPassCnv'});
+    }
+
     return (
         <div>
             <Menu />
@@ -76,6 +81,10 @@ function LogConvenio() {
 
                                 <div className="button-area">
                                     <button type="submit">Entrar</button>
+                                </div>
+
+                                <div className="button-forget">
+                                    <button onClick={handlePassword} type="button">Esqueceu a senha?</button>
                                 </div>
 
                             </form>

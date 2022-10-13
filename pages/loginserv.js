@@ -14,8 +14,8 @@ function LoginServ() {
         if (email.length > 6 ) {
             try {
                 const response = await api.get(`loginSrv/${email}/${password}`);
-                let srvId = response.data.srvId;
-                let srvNome = response.data.srvNome;
+                let srvId = response.data.usrId;
+                let srvNome = response.data.usrNome;
 
                 console.log(srvId)
                 console.log(srvNome)
@@ -30,8 +30,8 @@ function LoginServ() {
         }else {
             try {
                 const response = await api.get(`loginSrvAlt/${email}/${password}`);
-                let srvId = response.data.srvId;
-                let srvNome = response.data.srvNome;
+                let srvId = response.data.usrId;
+                let srvNome = response.data.usrNome;
                 Router.push({
                     pathname: '/dashboard',
                     query: { id: `${srvId}`, name: `${srvNome}`}
@@ -39,8 +39,7 @@ function LoginServ() {
             } catch (err) {
                 alert(`Falha no login alt. servidor! Tente novamente. ${email}`);
             } 
-        }
-         
+        }         
     }  
 
     function handlePassword() {

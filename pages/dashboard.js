@@ -172,12 +172,15 @@ export default function Dashboard() {
   };
     
   async function emitePdf(){
-    Router.push({pathname: '/VdaVencimento'});  
+    Router.push({
+      pathname: '/VdaVencimento',
+      query: { id: `${codServidor}`}
+    }) 
   }
   
   useEffect(() => {
     let idSrv = codServidor;
-    api.get(`cmpservidor/${idSrv}`).then(resp => {
+    api.get(`cmpServidor/${idSrv}`).then(resp => {
         setCompras(resp.data);       
          
     })   

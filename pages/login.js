@@ -77,7 +77,9 @@ function Login() {
                                 <div className="button-area">
                                     <button type="submit">Entrar</button>
                                 </div>
-
+                                <div className="button-text">
+                                    <button type="button">Esqueceu a senha</button>
+                                </div>
                             </form>
                         </div>
                     </div>

@@ -175,23 +175,19 @@ export default function Sobre() {
     }    
   };
     
-  async function emitePdf(){
-    Router.push({pathname: '/VdaVencimento'});  
+  async function emitePdfEmi(){
+    Router.push({
+      pathname: '/CmpCnvEmis',
+      query: { id: `${codConvenio}`}
+    })  
   }
 
-  //async function newLancamento(e){
-  //  e.preventDefault();
-  //  try {
-  //      await api.get(`verifUser/${cartao}`).then(resp => {    
-  //        Router.push({
-  //          pathname: '/lancamento',
-  //          query: { convenio: `${codConvenio}`, nomFantasia: `${nomConvenio}`, nroCartao: `${cartao}`}
-  //        })
-  //      })  
-  //  } catch (err) {
-  //    alert('Erro no cadastro!')
-  //  }       
-  //} 
+  async function emitePdfVct(){
+    Router.push({
+      pathname: '/CmpCnvVenc',
+      query: { id: `${codConvenio}`}
+    })  
+  }
 
   async function newLancamento(e){
     e.preventDefault();
@@ -300,9 +296,14 @@ export default function Sobre() {
         </div>         
         <div className={classes.leftItens}>
           <div className={classes.buttonarea}>
-            <button type="submit" className={classes.button} onClick={emitePdf}>Emite PDF</button>
+            <button type="submit" className={classes.button} onClick={emitePdfEmi}>Vendas Emissão</button>
           </div>
         </div>  
+        <div className={classes.leftItens}>
+          <div className={classes.buttonarea}>
+            <button type="submit" className={classes.button} onClick={emitePdfVct}>Vendas a Receber</button>
+          </div>
+        </div>    
       </div>      
       <div className={classes.right}>
         <div className={classes.formtext}>
