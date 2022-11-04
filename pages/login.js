@@ -43,6 +43,12 @@ function Login() {
          
     }  
 
+    function handlePassword(){
+        Router.push({
+            pathname: '/ForgetPassCnv',
+        })
+    }
+
     return (
         <div>
             <Menu />
@@ -78,7 +84,7 @@ function Login() {
                                     <button type="submit">Entrar</button>
                                 </div>
                                 <div className="button-text">
-                                    <button type="button">Esqueceu a senha</button>
+                                    <button type="button" onClick={handlePassword} >Esqueceu a senha</button>
                                 </div>
                             </form>
                         </div>
